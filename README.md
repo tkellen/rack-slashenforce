@@ -20,13 +20,13 @@ Add one of the following to config.ru:
 To enforce a trailing slash on all urls without a period in them:
 
 ```ruby
-use Rack::AppendSlash
+use Rack::AppendTrailingSlash
 ```
 
 To enforce no trailing slashes on any urls:
 
 ```ruby
-use Rack::RemoveSlash
+use Rack::RemoveTrailingSlashes
 ```
 
 For a more robust solution, see [rack-rewrite](https://github.com/jtrupiano/rack-rewrite).
