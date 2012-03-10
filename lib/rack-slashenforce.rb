@@ -2,11 +2,11 @@ module Rack
 
   module SlashEnforce
     def self.version
-      '0.0.1'
+      '0.0.2'
     end
   end
 
-  class RemoveSlash
+  class RemoveTrailingSlashes
     # regexp to match strings that start and end with a slash
     MATCH = %r{^/(.*)/$}
 
@@ -24,7 +24,7 @@ module Rack
     end
   end
 
-  class AppendSlash
+  class AppendTrailingSlash
     # regexp to match strings without periods that start and end with a slash
     MATCH = %r{^/([^.]*)[^/]$}
 
