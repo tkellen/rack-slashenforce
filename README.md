@@ -15,7 +15,9 @@ If you use Bundler, you will need to add it to your *Gemfile*.
 gem 'rack-slashenforce', :require => 'rack'
 ```
 
-Add one of the following to config.ru:
+## Usage
+
+Add one of the following lines to *config.ru*:
 
 To enforce a trailing slash on all urls without a period in them:
 
