@@ -1,4 +1,4 @@
-# Rack::SlashEnforce
+# rack-slashenforce
 
 A rack middleware to enforce appending or removing trailing slashes from URLs.
 
