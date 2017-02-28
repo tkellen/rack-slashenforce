@@ -15,7 +15,7 @@ module Rack
     end
 
     def call(env)
-      if env['PATH_INFO'] != '/' && env['PATH_INFO'] =~ MATCH
+      if env['PATH_INFO'] != '/' && env['PATH_INFO'] =~ MATCH && env['REQUEST_METHOD'] == 'GET'
         env['PATH_INFO'].sub!(/(\/)+$/,'')
         [301, {"Location" => Rack::Request.new(env).url, "Content-Type" => ""}, []]
       else
@@ -33,7 +33,7 @@ module Rack
     end
 
     def call(env)
-      if env['PATH_INFO'] != '/' && env['PATH_INFO'] =~ MATCH
+      if env['PATH_INFO'] != '/' && env['PATH_INFO'] =~ MATCH && env['REQUEST_METHOD'] == 'GET'
         env['PATH_INFO'] += '/'
         [301, {"Location" => Rack::Request.new(env).url, "Content-Type" => ""}, []]
       else
